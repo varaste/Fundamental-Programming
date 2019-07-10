@@ -1,0 +1,100 @@
+\documentclass[oneside]{article}
+
+\usepackage{siunitx}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{minted}
+\usepackage{lastpage}
+\usepackage{tcolorbox}
+\usepackage{amsmath}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage{setspace}
+\usepackage[absolute]{textpos}
+\usepackage{xepersian} % Always last package to load
+
+\settextfont{XW Zar}
+\setlatintextfont{Adobe Garamond Pro}
+\setlatinmonofont[Scale=0.8]{Monaco}
+\setdigitfont{XW Zar}
+\defpersianfont\nastaliqfont{IranNastaliq}
+\setlength{\TPHorizModule}{1cm}
+\setlength{\TPVertModule}{1cm}
+\linespread{1.5}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand*{\fancypagenumber}{%
+\fancyfoot[C]{صفحه
+\thepage
+از
+\pageref{LastPage}}
+}
+\fancypagenumber
+\fancypagestyle{plain}{\fancypagenumber}
+% insert syntax highlighted code from a file
+\newcommand{\inputcode}[2]{\inputminted[mathescape,%
+                                                 linenos=false,%
+                                                 formatcom=\small\setstretch{1}]{#1}{#2}}%
+%\renewcommand{\theFancyVerbLine}{\sffamily\scriptsize
+%\textcolor[rgb]{0.5,0.5,1.0}{\oldstylenums{\arabic{FancyVerbLine}}}}
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\topfraction}{0.8} 
+\renewcommand{\bottomfraction}{0.8} 
+\renewcommand{\floatpagefraction}{0.8}
+\title{آزمون پایانی برنامه نویسی مقدماتی}
+\author{امیر جهانشاهی}
+\begin{document}
+\maketitle
+
+\begin{textblock}{5}(6.5,2)\nastaliqfont
+\noindent\Large
+بسم الله الرحمن الرحیم
+\end{textblock}
+
+\begin{tcolorbox}
+لطفا هر کدام از سوالات را که تمام کردید تحویل دهید و نمره آن سوال را دریافت کنید. توجه کنید که تمیز بودن کد 30 درصد امتیاز خواهد بود و فقط جواب گرفتن به معنای نمره کامل نیست. وقت به اندازه کافی دارید، در نتیجه برای حل سوالات با آرامش و طیب خاطر اقدام کنید.
+\end{tcolorbox}
+
+\begin{enumerate}
+\item
+یک جدول مرتب از کاراکتر های کوچک و بزرگ به همراه کد اسکی آنها در مرتبه 16 و همچنین ده دهی تولید و به طرز زیبایی نشان دهد. 
+
+\item
+پیش از این با اعداد همخوان آشنایی کافی داشته اید. مثلا عدد 989 یک عدد همخوان است زیرا از دو سمت به یک صورت خوانده می شود. در این تمرین قصد داریم بزرگترین عدد همخوان که ضرب دو عدد سه رقمی در یکدیگر می باشد را بار دیگر حساب کنیم. برای برعکس کردن عدد ابتدا آن را به رشته 
+\lr{\texttt{string}}
+تبدیل کنید و سپس آن را به صورت رشته برعکس کنید. برنامه را حتی الامکان بهینه بنویسید که در سریع ترین حالت به جواب برسد.
+
+\item
+برنامه اي بنويسيد كه يك رشته از ورودي دريافت كند و زير رشته هايي كه در آن تكرار شده اند را پیدا كرده تعداد تكـرار آنهـا را محاسبه كند. براي مثال 
+\lr{\texttt{ue}}
+ در رشته 
+ \lr{\texttt{queue}}
+  دو بار و 
+ \lr{\texttt{aba}}
+   در رشته  
+\lr{\texttt{abababa}}
+سه بار تكرار شده است. در خروجي رشته ای كه بيشترين تكرار را دارد چاپ كنيد
+
+\item
+در این سوال هدف این هست که اعداد داخل فایل 
+\lr{\texttt{complex.txt}}
+خوانده شوند با هم جمع شوند و در هم ضرب شوند. اگر این کار درست انجام بگیرد مجموع بایستی
+$50.78+50.24j$
+باشد و حاصلضرب بایستی حدود صفر بشود. این تمرین را به این صورت انجام می دهیم که ابتدا یک کلاس با نام 
+\lr{\texttt{Complex}}
+درست کنید که قابلیت جمع و ضرب اعداد مختلط را داشته باشد. به عبارت دیگر داخل کلاس این توابع را تعریف کنید:
+\lr{\texttt{add(const Complex\&)}}
+و همچنین
+\lr{\texttt{mul(const Complex\&)}}. 
+سپس از داخل فایل اعداد را بخوانید و در یک آرایه ای از جنس کلاس ذخیره کنید. طول آرایه را 100 در نظر بگیرید. سپس توسط یک حلقه حاصلضرب و حاصلجمع را بدست بیاورید.
+
+\item
+اعداد 1487، 4817 و 8147 از چند نظر عجیب هستند: اول اینکه تفاضل هر جفت آنها 3330 می باشد، دوم اینکه هر سه اول هستند و سوم اینکه جایگشت یکدیگر هستند. آیا می توانید سه عدد چهار رقمی دیگر نیز پیدا کنید که این خصوصیات را داشته باشند؟
+
+راهنمایی: اول تمامی اعداد اول 4 رقمی را پیدا کنید. سپس هر جفت سه تایی را که تفاضل یکسان دارند را مشخص نمایید. در نهایت پیدا کنید که از بین جواب های حاصل کدام یک از نظر جایگشت درست هستند. اگر برنامه شما درست کار کند دو جواب خواهید داشت که یکی در صورت سوال آماده است. همچنین دقت کنید که برای پیدا کردن یک عدد در یک آرایه منظم شده از سرچ دو دویی استفاده کنید که کدش در زیر آمده است:
+\inputcode{c++}{bin_search.cpp}
+
+
+\end{enumerate}
+
+
+\end{document}

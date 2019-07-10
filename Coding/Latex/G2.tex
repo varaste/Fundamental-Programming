@@ -1,0 +1,98 @@
+\documentclass[oneside]{article}
+
+\usepackage{siunitx}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{minted}
+\usepackage{lastpage}
+\usepackage{tcolorbox}
+\usepackage{amsmath}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage{setspace}
+\usepackage[absolute]{textpos}
+\usepackage{xepersian} % Always last package to load
+
+\settextfont{XW Zar}
+\setlatintextfont{Adobe Garamond Pro}
+\setlatinmonofont[Scale=0.8]{Monaco}
+\setdigitfont{XW Zar}
+\defpersianfont\nastaliqfont{IranNastaliq}
+\setlength{\TPHorizModule}{1cm}
+\setlength{\TPVertModule}{1cm}
+\linespread{1.5}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand*{\fancypagenumber}{%
+\fancyfoot[C]{صفحه
+\thepage
+از
+\pageref{LastPage}}
+}
+\fancypagenumber
+\fancypagestyle{plain}{\fancypagenumber}
+% insert syntax highlighted code from a file
+\newcommand{\inputcode}[2]{\inputminted[mathescape,%
+                                                 linenos=false,%
+                                                 formatcom=\small\setstretch{1}]{#1}{#2}}%
+%\renewcommand{\theFancyVerbLine}{\sffamily\scriptsize
+%\textcolor[rgb]{0.5,0.5,1.0}{\oldstylenums{\arabic{FancyVerbLine}}}}
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\topfraction}{0.8} 
+\renewcommand{\bottomfraction}{0.8} 
+\renewcommand{\floatpagefraction}{0.8}
+\title{آزمون پایانی برنامه نویسی مقدماتی}
+\author{امیر جهانشاهی}
+\begin{document}
+\maketitle
+
+\begin{textblock}{5}(6.5,2)\nastaliqfont
+\noindent\Large
+بسم الله الرحمن الرحیم
+\end{textblock}
+
+\begin{tcolorbox}
+لطفا هر کدام از سوالات را که تمام کردید تحویل دهید و نمره آن سوال را دریافت کنید. توجه کنید که تمیز بودن کد 30 درصد امتیاز خواهد بود و فقط جواب گرفتن به معنای نمره کامل نیست. وقت به اندازه کافی دارید، در نتیجه برای حل سوالات با آرامش و طیب خاطر اقدام کنید.
+\end{tcolorbox}
+
+\begin{enumerate}
+\item
+یک دایره تو خالی توسط علامت + درست کنید و در وسط آن نام خود را بنویسید.
+
+
+\item
+	برنامه اي بنويسيد كه يك رشته متشكل از حروف الفبا از ورودي دريافت كند و زير رشته هايي كه در آن رشته از دو طرف يكسان خوانده مي شوند را در خروجي چاپ كند.
+	
+	ورودی: 
+\lr{ThesampletextthatcouldbereadedthesameinbothordersArozaupalanalapuazorA}
+
+خروجی: 
+\lr{ArozaupalanalapuazorA}
+راهنمایی: رشته ورودی را در یک فایل ذخیره کنید و هر دفعه از فایل بخوانید از جایی که وارد کردن این رشته خیلی زمان بر می باشد.
+
+
+\item
+سری 
+{$1^1+2^2+3^3+\ldots+10^{10}=10405071317$}
+را داریم. 10 رقم آخر سری بالا را تا
+$1000^{1000}$
+حساب کنید. در صورتی که برنامه شما درست کار کنه باید به جواب 9110846700 برسید. حال باقیمانده عدد حاصل را نسبت به 700 حساب کنید.
+راهنمایی: می توانید از فایل 
+\lr{\texttt{arbit\_multiplication.cpp}}
+استفاده کنید.
+
+\item
+فایل 
+\lr{student.txt}
+را باز کنید. با صرفنظر از خط اول هر خط آن اطلاعات مربوط به یک دانشجو از اسم، شماره دانشجویی رشته و نمرات درس هاست، توجه کنید که تعداد درس ها برای هر دانشجو می تواند متغیر باشد. کلاس دانشجو را ایجاد کنید که بتوانید از داخل فایل اطلاعات را وارد کنید. برای ذخیره دانشجویان از بردار استفاده کنید چون تعداد دانشجویان معلوم نیست. یک متد به نام
+\lr{\texttt{write}}
+داخل کلاس دانشجو تعریف کنید که با گرفتن یک شی از جنس فایل خروجی اطلاعات دانشجو به همراه معدل دانشجو را داخل فایل بنویسد. فایل خروجی مشابه فایل ورودی خواهد بود به جز اینکه داده ها می توانند مرتب تر درج بشوند و معدل هم وجود خواهد داشت.
+
+\item
+در صورتی که 
+\lr{$p$}
+محیط یک مثلث قائم الزاویه باشد، برای محیط 120 تنها سه جواب 20، 48، 52 و 24، 45، 51 و 30،40،50 وجود دارند. به ازای چه محیط کوچک تر از 1000 ای تعداد جواب ها ماکزیمم می شود؟
+
+\end{enumerate}
+
+
+\end{document}
